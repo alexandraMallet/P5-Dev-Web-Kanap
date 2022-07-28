@@ -1,9 +1,6 @@
 async function showItems() {
 
-  const requestURL = 'http://localhost:3000/api/products';
-  const request = new Request(requestURL);
-
-  const response = await fetch(request);
+  const response = await fetch('http://localhost:3000/api/products');
   const products = await response.json();
 
   getItems(products);
@@ -25,8 +22,8 @@ function getItems(products) {
     imgItem.setAttribute("src", item.imageUrl, "alt", item.altTxt);
     nameItem.classList.add("productName");
     descrItem.classList.add("productDescription");
-    nameItem.textContent=item.name;
-    descrItem.textContent=item.description;
+    nameItem.textContent = item.name;
+    descrItem.textContent = item.description;
   }
 }
 
